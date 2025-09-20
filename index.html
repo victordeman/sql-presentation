@@ -8,7 +8,6 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-    <script src="https://unpkg.com/feather-icons"></script>
     <style>
         .slide {
             min-height: 100vh;
@@ -206,13 +205,14 @@ LIMIT 5;</pre>
                                 </li>
                             </ul>
                         </div>
-                        <div class="mt-6">
-                            <button class="text-blue-600 hover:underline" onclick="document.getElementById('electronics-query').classList.toggle('hidden')">
-                                Show Electronics-Only Query
-                            </button>
-                            <div id="electronics-query" class="hidden mt-4">
-                                <div class="code-block p-6 mb-4">
-                                    <pre class="text-sm overflow-x-auto">
+                        <div class="mt-6 space-y-4">
+                            <div>
+                                <button class="text-blue-600 hover:underline" onclick="document.getElementById('electronics-query').classList.toggle('hidden')">
+                                    Show Electronics-Only Query
+                                </button>
+                                <div id="electronics-query" class="hidden mt-4">
+                                    <div class="code-block p-6 mb-4">
+                                        <pre class="text-sm overflow-x-auto">
 SELECT 
     Product, 
     SUM(Sales_Amount) as Total_Sales 
@@ -221,31 +221,108 @@ WHERE Category = 'Electronics'
 GROUP BY Product 
 ORDER BY Total_Sales DESC 
 LIMIT 5;</pre>
+                                    </div>
+                                    <div class="bg-white p-4 rounded-lg shadow-sm">
+                                        <h3 class="font-bold mb-3">Electronics Results:</h3>
+                                        <table class="w-full">
+                                            <thead>
+                                                <tr>
+                                                    <th>Product</th>
+                                                    <th>Total_Sales</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Laptop</td>
+                                                    <td>$1500</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Phone</td>
+                                                    <td>$800</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Headphones</td>
+                                                    <td>$400</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
-                                <div class="bg-white p-4 rounded-lg shadow-sm">
-                                    <h3 class="font-bold mb-3">Electronics Results:</h3>
-                                    <table class="w-full">
-                                        <thead>
-                                            <tr>
-                                                <th>Product</th>
-                                                <th>Total_Sales</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>Laptop</td>
-                                                <td>$1500</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Phone</td>
-                                                <td>$800</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Headphones</td>
-                                                <td>$400</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                            </div>
+                            <div>
+                                <button class="text-blue-600 hover:underline" onclick="document.getElementById('clothing-query').classList.toggle('hidden')">
+                                    Show Clothing-Only Query
+                                </button>
+                                <div id="clothing-query" class="hidden mt-4">
+                                    <div class="code-block p-6 mb-4">
+                                        <pre class="text-sm overflow-x-auto">
+SELECT 
+    Product, 
+    SUM(Sales_Amount) as Total_Sales 
+FROM Sales 
+WHERE Category = 'Clothing' 
+GROUP BY Product 
+ORDER BY Total_Sales DESC 
+LIMIT 5;</pre>
+                                    </div>
+                                    <div class="bg-white p-4 rounded-lg shadow-sm">
+                                        <h3 class="font-bold mb-3">Clothing Results:</h3>
+                                        <table class="w-full">
+                                            <thead>
+                                                <tr>
+                                                    <th>Product</th>
+                                                    <th>Total_Sales</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Jeans</td>
+                                                    <td>$300</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Shirt</td>
+                                                    <td>$200</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <button class="text-blue-600 hover:underline" onclick="document.getElementById('category-query').classList.toggle('hidden')">
+                                    Show Sales by Category
+                                </button>
+                                <div id="category-query" class="hidden mt-4">
+                                    <div class="code-block p-6 mb-4">
+                                        <pre class="text-sm overflow-x-auto">
+SELECT 
+    Category, 
+    SUM(Sales_Amount) as Total_Sales 
+FROM Sales 
+GROUP BY Category 
+ORDER BY Total_Sales DESC;</pre>
+                                    </div>
+                                    <div class="bg-white p-4 rounded-lg shadow-sm">
+                                        <h3 class="font-bold mb-3">Category Results:</h3>
+                                        <table class="w-full">
+                                            <thead>
+                                                <tr>
+                                                    <th>Category</th>
+                                                    <th>Total_Sales</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Electronics</td>
+                                                    <td>$2700</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Clothing</td>
+                                                    <td>$500</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -351,13 +428,19 @@ LIMIT 5;</pre>
     </div>
 
     <script>
-        AOS.init({
-            duration: 800,
-            easing: 'ease-in-out',
-            once: true
-        });
+        // Initialize AOS only if loaded
+        if (typeof AOS !== 'undefined') {
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true
+            });
+        }
         
-        feather.replace();
+        // Initialize Feather Icons only if loaded
+        if (typeof feather !== 'undefined') {
+            feather.replace();
+        }
         
         // Mobile menu toggle
         const menuToggle = document.getElementById('menu-toggle');
