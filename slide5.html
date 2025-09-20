@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Operations in SQL - Slide 5</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <style>
+        body {
+            display: block !important;
+            visibility: visible !important;
+            margin-right: 80px;
+        }
+        .code-block {
+            background-color: #1e293b;
+            color: #f8fafc;
+            border-radius: 0.5rem;
+            font-family: monospace;
+        }
+        .table-container {
+            overflow-x: auto;
+            max-width: 100%;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #cbd5e1;
+            padding: 0.75rem;
+            text-align: left;
+        }
+        th {
+            background-color: #f1f5f9;
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+        .highlight {
+            background-color: #fefcbf;
+            transition: background-color 1s ease-in-out;
+        }
+        .slide-update {
+            animation: slideUpdate 1s ease-in-out;
+        }
+        .fade-out {
+            animation: fadeOut 1s ease-in-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes slideUpdate {
+            from { transform: translateX(-10px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        @keyframes fadeOut {
+            from { opacity: 1; }
+            to { opacity: 0; display: none; }
+        }
+        @media (max-width: 640px) {
+            body {
+                margin-right: 60px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+    <!-- Right-Side Navigation -->
+    <nav class="fixed right-0 top-0 h-full w-20 bg-white bg-opacity-90 shadow-lg flex flex-col justify-center items-center space-y-6 z-50" role="navigation">
+        <a href="slide1.html" aria-label="Introduction Slide" class="flex flex-col items-center text-gray-600 hover:text-blue-600">
+            <i data-feather="home" class="w-6 h-6"></i>
+            <span class="text-sm">Intro</span>
+        </a>
+        <a href="slide2.html" aria-label="What is SQL Slide" class="flex flex-col items-center text-gray-600 hover:text-blue-600">
+            <i data-feather="database" class="w-6 h-6"></i>
+            <span class="text-sm">What is SQL?</span>
+        </a>
+        <a href="slide3.html" aria-label="Practical Example Slide" class="flex flex-col items-center text-gray-600 hover:text-blue-600">
+            <i data-feather="code" class="w-6 h-6"></i>
+            <span class="text-sm">Example</span>
+        </a>
+        <a href="slide4.html" aria-label="Summary Slide" class="flex flex-col items-center text-gray-600 hover:text-blue-600">
+            <i data-feather="check-circle" class="w-6 h-6"></i>
+            <span class="text-sm">Summary</span>
+        </a>
+        <a href="slide5.html" aria-label="CRUD Operations Slide" class="flex flex-col items-center text-blue-600 font-bold">
+            <i data-feather="settings" class="w-6 h-6"></i>
+            <span class="text-sm">CRUD</span>
+        </a>
+    </nav>
+
+    <!-- Slide Content -->
+    <section class="flex items-center justify-center bg-gray-50 px-6 py-20 min-h-screen">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-3xl font-bold mb-8 text-center text-gray-800">CRUD Operations in SQL</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <div class="mb-6">
+                        <h3 class="text-xl font-bold mb-2">Create: Add a New Record</h3>
+                        <div class="code-block p-6 mb-4">
+                            <pre class="text-sm overflow-x-auto">
+INSERT INTO Sales (Product, Category, Sales_Amount)
+VALUES ('Tablet', 'Electronics', 600);</pre>
+                        </div>
+                        <button class="text-blue-600 hover:underline" onclick="animateCreate()">Show Create Animation</button>
+                    </div>
+                    <div class="mb-6">
+                        <h3 class="text-xl font-bold mb-2">Read: Retrieve Data</h3>
+                        <div class="code-block p-6 mb-4">
+                            <pre class="text-sm overflow-x-auto">
+SELECT Product, Sales_Amount 
+FROM Sales 
+WHERE Category = 'Electronics';</pre>
+                        </div>
+                        <button class="text-blue-600 hover:underline" onclick="animateRead()">Show Read Animation</button>
+                    </div>
+                    <div class="mb-6">
+                        <h3 class="text-xl font-bold mb-2">Update: Modify Data</h3>
+                        <div class="code-block p-6 mb-4">
+                            <pre class="text-sm overflow-x-auto">
+UPDATE Sales 
+SET Sales_Amount = 900 
+WHERE Product = 'Phone';</pre>
+                        </div>
+                        <button class="text-blue-600 hover:underline" onclick="animateUpdate()">Show Update Animation</button>
+                    </div>
+                    <div class="mb-6">
+                        <h3 class="text-xl font-bold mb-2">Delete: Remove Data</h3>
+                        <div class="code-block p-6 mb-4">
+                            <pre class="text-sm overflow-x-auto">
+DELETE FROM Sales 
+WHERE Product = 'Shirt';</pre>
+                        </div>
+                        <button class="text-blue-600 hover:underline" onclick="animateDelete()">Show Delete Animation</button>
+                    </div>
+                </div>
+                <div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm">
+                        <h3 class="font-bold text-lg mb-4">Sales Table</h3>
+                        <div class="table-container">
+                            <table class="w-full" id="crud-table">
+                                <thead>
+                                    <tr>
+                                        <th>Product</th>
+                                        <th>Category</th>
+                                        <th>Sales_Amount</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr id="row-laptop">
+                                        <td>Laptop</td>
+                                        <td>Electronics</td>
+                                        <td>$1500</td>
+                                    </tr>
+                                    <tr id="row-phone">
+                                        <td>Phone</td>
+                                        <td>Electronics</td>
+                                        <td id="phone-amount">$800</td>
+                                    </tr>
+                                    <tr id="row-shirt">
+                                        <td>Shirt</td>
+                                        <td>Clothing</td>
+                                        <td>$200</td>
+                                    </tr>
+                                    <tr id="row-jeans">
+                                        <td>Jeans</td>
+                                        <td>Clothing</td>
+                                        <td>$300</td>
+                                    </tr>
+                                    <tr id="row-headphones">
+                                        <td>Headphones</td>
+                                        <td>Electronics</td>
+                                        <td>$400</td>
+                                    </tr>
+                                    <tr id="row-tablet" class="hidden">
+                                        <td>Tablet</td>
+                                        <td>Electronics</td>
+                                        <td>$600</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="mt-4 bg-yellow-50 p-3 rounded-lg">
+                            <p class="text-sm text-yellow-800">
+                                <i data-feather="info" class="inline mr-2 w-4 h-4"></i>
+                                CRUD operations allow full control over database data.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        if (typeof feather !== 'undefined') {
+            feather.replace();
+        }
+        function animateCreate() {
+            const row = document.getElementById('row-tablet');
+            row.classList.remove('hidden');
+            row.classList.add('fade-in');
+            setTimeout(() => row.classList.remove('fade-in'), 1000);
+        }
+        function animateRead() {
+            const rows = [document.getElementById('row-laptop'), document.getElementById('row-phone'), document.getElementById('row-headphones'), document.getElementById('row-tablet')];
+            rows.forEach(row => {
+                if (row && !row.classList.contains('hidden')) {
+                    row.classList.add('highlight');
+                    setTimeout(() => row.classList.remove('highlight'), 1000);
+                }
+            });
+        }
+        function animateUpdate() {
+            const cell = document.getElementById('phone-amount');
+            cell.classList.add('slide-update');
+            cell.textContent = '$900';
+            setTimeout(() => cell.classList.remove('slide-update'), 1000);
+        }
+        function animateDelete() {
+            const row = document.getElementById('row-shirt');
+            row.classList.add('fade-out');
+            setTimeout(() => row.classList.add('hidden'), 1000);
+        }
+    </script>
+</body>
+</html>
