@@ -1,10 +1,10 @@
 # SQL for Data Analysis Presentation
 
-This repository contains a web-based presentation on **SQL for Data Analysis** by **Dr. Chukwuka Obionwu**, hosted on GitHub Pages at [https://victordeman.github.io/sql-presentation/slide1.html](https://victordeman.github.io/sql-presentation/slide1.html). The presentation introduces SQL (Structured Query Language), its role in data analysis, and practical examples using a sample sales dataset. It is designed for learners and professionals interested in leveraging SQL for business analytics, data science, and inventory management.
+This repository contains a web-based presentation on **SQL for Data Analysis** by **Dr. Chukwuka Obionwu**, hosted on GitHub Pages at [https://victordeman.github.io/sql-presentation/slide1.html](https://victordeman.github.io/sql-presentation/slide1.html). The presentation introduces SQL (Structured Query Language), its role in data analysis, practical examples, and CRUD operations, designed for learners and professionals interested in business analytics, data science, and inventory management.
 
 ## Overview
 
-The presentation is split into four slides, each in a separate HTML file, with a vertical navigation bar on the right side for easy access. The content is styled using [TailwindCSS](https://tailwindcss.com/) and [Feather Icons](https://feathericons.com/) for a modern, responsive design.
+The presentation is split into five slides, each in a separate HTML file, with a vertical navigation bar on the right side for easy access. The content is styled using [TailwindCSS](https://tailwindcss.com/) and [Feather Icons](https://feathericons.com/) for a modern, responsive design.
 
 ### Slides
 1. **Introduction (slide1.html)**: Introduces SQL and its importance in analyzing sales data, presented by Dr. Chukwuka Obionwu on September 24, 2025.
@@ -15,6 +15,7 @@ The presentation is split into four slides, each in a separate HTML file, with a
    - Clothing-only product sales.
    - Total sales by category.
 4. **Summary (slide4.html)**: Highlights key takeaways, such as SQL’s efficiency, wide applications, and tools like SQLValidator, with a call to action to explore business problems using SQL.
+5. **CRUD Operations (slide5.html)**: Shows Create, Read, Update, and Delete operations with animated examples on the Sales table, visualizing data manipulation.
 
 ## Accessing the Presentation
 
@@ -23,9 +24,11 @@ Visit the presentation at the following URLs:
 - [Slide 2: What is SQL?](https://victordeman.github.io/sql-presentation/slide2.html)
 - [Slide 3: Practical Example](https://victordeman.github.io/sql-presentation/slide3.html)
 - [Slide 4: Summary](https://victordeman.github.io/sql-presentation/slide4.html)
+- [Slide 5: CRUD Operations](https://victordeman.github.io/sql-presentation/slide5.html)
 
 Navigate between slides using the vertical navigation bar on the right side of each page.
 
+## Repository Structure
 ## Repository Structure
 ```
 
