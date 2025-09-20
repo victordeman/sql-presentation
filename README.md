@@ -23,8 +23,8 @@ Visit the presentation at the following URLs:
 - [Slide 1: Introduction](https://victordeman.github.io/sql-presentation/slide1.html)
 - [Slide 2: What is SQL?](https://victordeman.github.io/sql-presentation/slide2.html)
 - [Slide 3: Practical Example](https://victordeman.github.io/sql-presentation/slide3.html)
-- [Slide 5: CRUD Operations](https://victordeman.github.io/sql-presentation/slide4.html)
-- [Slide 4: Summary](https://victordeman.github.io/sql-presentation/slide5.html)
+- [Slide 4: CRUD Operations](https://victordeman.github.io/sql-presentation/slide4.html)
+- [Slide 5: Summary](https://victordeman.github.io/sql-presentation/slide5.html)
 
 Navigate between slides using the vertical navigation bar on the right side of each page.
 
