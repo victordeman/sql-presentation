@@ -10,6 +10,7 @@
         body {
             display: block !important;
             visibility: visible !important;
+            margin-right: 80px;
         }
         .code-block {
             background-color: #1e293b;
@@ -33,34 +34,32 @@
         th {
             background-color: #f1f5f9;
         }
+        @media (max-width: 640px) {
+            body {
+                margin-right: 60px;
+            }
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans">
-    <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 bg-white shadow-md z-50" role="navigation">
-        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
-            <div class="flex items-center space-x-2">
-                <i data-feather="database" class="text-blue-600"></i>
-                <span class="font-bold text-lg">SQL Tutorial</span>
-            </div>
-            <div class="hidden md:flex space-x-6">
-                <a href="slide1.html" aria-label="Introduction Slide" class="hover:text-blue-600">Intro</a>
-                <a href="slide2.html" aria-label="What is SQL Slide" class="hover:text-blue-600">What is SQL?</a>
-                <a href="slide3.html" aria-label="Practical Example Slide" class="hover:text-blue-600 font-bold">Example</a>
-                <a href="slide4.html" aria-label="Summary Slide" class="hover:text-blue-600">Summary</a>
-            </div>
-            <button class="md:hidden focus:outline-none" id="menu-toggle" aria-expanded="false">
-                <i data-feather="menu"></i>
-            </button>
-        </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-white px-6 py-3 border-t">
-            <div class="flex flex-col space-y-3">
-                <a href="slide1.html" aria-label="Introduction Slide" class="hover:text-blue-600">Intro</a>
-                <a href="slide2.html" aria-label="What is SQL Slide" class="hover:text-blue-600">What is SQL?</a>
-                <a href="slide3.html" aria-label="Practical Example Slide" class="hover:text-blue-600 font-bold">Example</a>
-                <a href="slide4.html" aria-label="Summary Slide" class="hover:text-blue-600">Summary</a>
-            </div>
-        </div>
+    <!-- Right-Side Navigation -->
+    <nav class="fixed right-0 top-0 h-full w-20 bg-white bg-opacity-90 shadow-lg flex flex-col justify-center items-center space-y-6 z-50" role="navigation">
+        <a href="slide1.html" aria-label="Introduction Slide" class="flex flex-col items-center text-gray-600 hover:text-blue-600">
+            <i data-feather="home" class="w-6 h-6"></i>
+            <span class="text-sm">Intro</span>
+        </a>
+        <a href="slide2.html" aria-label="What is SQL Slide" class="flex flex-col items-center text-gray-600 hover:text-blue-600">
+            <i data-feather="database" class="w-6 h-6"></i>
+            <span class="text-sm">What is SQL?</span>
+        </a>
+        <a href="slide3.html" aria-label="Practical Example Slide" class="flex flex-col items-center text-blue-600 font-bold">
+            <i data-feather="code" class="w-6 h-6"></i>
+            <span class="text-sm">Example</span>
+        </a>
+        <a href="slide4.html" aria-label="Summary Slide" class="flex flex-col items-center text-gray-600 hover:text-blue-600">
+            <i data-feather="check-circle" class="w-6 h-6"></i>
+            <span class="text-sm">Summary</span>
+        </a>
     </nav>
 
     <!-- Slide Content -->
@@ -269,19 +268,6 @@ ORDER BY Total_Sales DESC;</pre>
         if (typeof feather !== 'undefined') {
             feather.replace();
         }
-        const menuToggle = document.getElementById('menu-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
-        menuToggle.addEventListener('click', function() {
-            mobileMenu.classList.toggle('hidden');
-            const isExpanded = mobileMenu.classList.contains('hidden') ? 'false' : 'true';
-            menuToggle.setAttribute('aria-expanded', isExpanded);
-        });
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-                menuToggle.setAttribute('aria-expanded', 'false');
-            });
-        });
     </script>
 </body>
 </html>
