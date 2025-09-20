@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What is SQL? - Slide 2</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <style>
+        body {
+            display: block !important;
+            visibility: visible !important;
+        }
+        .table-container {
+            overflow-x: auto;
+            max-width: 100%;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #cbd5e1;
+            padding: 0.75rem;
+            text-align: left;
+        }
+        th {
+            background-color: #f1f5f9;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 bg-white shadow-md z-50" role="navigation">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i data-feather="database" class="text-blue-600"></i>
+                <span class="font-bold text-lg">SQL Tutorial</span>
+            </div>
+            <div class="hidden md:flex space-x-6">
+                <a href="slide1.html" aria-label="Introduction Slide" class="hover:text-blue-600">Intro</a>
+                <a href="slide2.html" aria-label="What is SQL Slide" class="hover:text-blue-600 font-bold">What is SQL?</a>
+                <a href="slide3.html" aria-label="Practical Example Slide" class="hover:text-blue-600">Example</a>
+                <a href="slide4.html" aria-label="Summary Slide" class="hover:text-blue-600">Summary</a>
+            </div>
+            <button class="md:hidden focus:outline-none" id="menu-toggle" aria-expanded="false">
+                <i data-feather="menu"></i>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white px-6 py-3 border-t">
+            <div class="flex flex-col space-y-3">
+                <a href="slide1.html" aria-label="Introduction Slide" class="hover:text-blue-600">Intro</a>
+                <a href="slide2.html" aria-label="What is SQL Slide" class="hover:text-blue-600 font-bold">What is SQL?</a>
+                <a href="slide3.html" aria-label="Practical Example Slide" class="hover:text-blue-600">Example</a>
+                <a href="slide4.html" aria-label="Summary Slide" class="hover:text-blue-600">Summary</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Slide Content -->
+    <section class="flex items-center justify-center bg-white px-6 py-20 min-h-screen">
+        <div class="container mx-auto max-w-4xl">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <h2 class="text-3xl font-bold mb-6 text-gray-800">What is SQL?</h2>
+                    <p class="text-lg text-gray-700 mb-4">
+                        SQL (Structured Query Language) is used to query and manage databases.
+                    </p>
+                    <p class="text-lg text-gray-700 mb-4">
+                        It plays a key role in extracting insights from data like sales figures and customer behavior.
+                    </p>
+                    <p class="text-lg text-gray-700 mb-6">
+                        Tools like SQLValidator, developed by Dr. Obionwu, help learners master SQL effectively.
+                    </p>
+                    <div class="bg-blue-50 p-4 rounded-lg mb-6">
+                        <h3 class="font-bold text-blue-800 mb-2">Basic Commands:</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i data-feather="chevron-right" class="text-blue-600 mr-2 mt-1"></i>
+                                <span><span class="font-mono font-bold">SELECT</span> - Retrieve data</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="chevron-right" class="text-blue-600 mr-2 mt-1"></i>
+                                <span><span class="font-mono font-bold">WHERE</span> - Filter results</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="chevron-right" class="text-blue-600 mr-2 mt-1"></i>
+                                <span><span class="font-mono font-bold">GROUP BY</span> - Aggregate data</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="bg-gray-50 p-6 rounded-xl shadow-sm">
+                        <h3 class="font-bold text-lg mb-4">Sample Sales Table</h3>
+                        <div class="table-container">
+                            <table class="w-full">
+                                <thead>
+                                    <tr>
+                                        <th>Product</th>
+                                        <th>Category</th>
+                                        <th>Sales_Amount</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Laptop</td>
+                                        <td>Electronics</td>
+                                        <td>$1500</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Phone</td>
+                                        <td>Electronics</td>
+                                        <td>$800</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Shirt</td>
+                                        <td>Clothing</td>
+                                        <td>$200</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jeans</td>
+                                        <td>Clothing</td>
+                                        <td>$300</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Headphones</td>
+                                        <td>Electronics</td>
+                                        <td>$400</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        if (typeof feather !== 'undefined') {
+            feather.replace();
+        }
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuToggle.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
+            const isExpanded = mobileMenu.classList.contains('hidden') ? 'false' : 'true';
+            menuToggle.setAttribute('aria-expanded', isExpanded);
+        });
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuToggle.setAttribute('aria-expanded', 'false');
+            });
+        });
+    </script>
+</body>
+</html>
