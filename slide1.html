@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to SQL for Data Analysis - Slide 1</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <style>
+        body {
+            display: block !important;
+            visibility: visible !important;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 bg-white shadow-md z-50" role="navigation">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i data-feather="database" class="text-blue-600"></i>
+                <span class="font-bold text-lg">SQL Tutorial</span>
+            </div>
+            <div class="hidden md:flex space-x-6">
+                <a href="slide1.html" aria-label="Introduction Slide" class="hover:text-blue-600 font-bold">Intro</a>
+                <a href="slide2.html" aria-label="What is SQL Slide" class="hover:text-blue-600">What is SQL?</a>
+                <a href="slide3.html" aria-label="Practical Example Slide" class="hover:text-blue-600">Example</a>
+                <a href="slide4.html" aria-label="Summary Slide" class="hover:text-blue-600">Summary</a>
+            </div>
+            <button class="md:hidden focus:outline-none" id="menu-toggle" aria-expanded="false">
+                <i data-feather="menu"></i>
+            </button>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white px-6 py-3 border-t">
+            <div class="flex flex-col space-y-3">
+                <a href="slide1.html" aria-label="Introduction Slide" class="hover:text-blue-600 font-bold">Intro</a>
+                <a href="slide2.html" aria-label="What is SQL Slide" class="hover:text-blue-600">What is SQL?</a>
+                <a href="slide3.html" aria-label="Practical Example Slide" class="hover:text-blue-600">Example</a>
+                <a href="slide4.html" aria-label="Summary Slide" class="hover:text-blue-600">Summary</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Slide Content -->
+    <section class="flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-50 px-6 py-20 min-h-screen">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6 text-gray-800">Introduction to SQL for Data Analysis</h1>
+            <div class="flex items-center justify-center space-x-4 mb-4">
+                <img src="images/profile.jpg" alt="Dr. Chukwuka Obionwu Profile" class="w-16 h-16 rounded-full object-cover shadow-md">
+                <div class="text-left">
+                    <p class="font-medium">Dr. Chukwuka Obionwu</p>
+                    <p class="text-gray-600">September 24, 2025</p>
+                </div>
+            </div>
+            <i data-feather="database" class="text-blue-600 w-16 h-16 mb-4"></i>
+            <p class="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
+                Learn how SQL helps businesses analyze sales data and make informed decisions.
+            </p>
+            <div class="flex justify-center space-x-4">
+                <a href="slide2.html" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300 flex items-center">
+                    <span>Get Started</span>
+                    <i data-feather="arrow-right" class="ml-2 w-5 h-5"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        if (typeof feather !== 'undefined') {
+            feather.replace();
+        }
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuToggle.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
+            const isExpanded = mobileMenu.classList.contains('hidden') ? 'false' : 'true';
+            menuToggle.setAttribute('aria-expanded', isExpanded);
+        });
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuToggle.setAttribute('aria-expanded', 'false');
+            });
+        });
+    </script>
+</body>
+</html>
