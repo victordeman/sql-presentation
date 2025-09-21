@@ -10,38 +10,52 @@
         body {
             display: block !important;
             visibility: visible !important;
-            margin-right: 80px; /* Prevent overlap with navbar */
+            margin-right: 100px;
         }
         @media (max-width: 640px) {
             body {
-                margin-right: 60px; /* Smaller margin for mobile */
+                margin-right: 70px;
+            }
+            nav {
+                width: 16rem;
+            }
+            nav a span {
+                font-size: 0.65rem;
+            }
+            nav a i {
+                width: 1.25rem;
+                height: 1.25rem;
+            }
+            nav a.font-bold i {
+                width: 1.5rem;
+                height: 1.5rem;
             }
         }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans">
     <!-- Right-Side Navigation -->
-  <nav class="fixed right-0 top-0 h-full w-24 bg-gradient-to-b from-white to-blue-50 shadow-lg flex flex-col justify-center items-center space-y-8 z-50 rounded-l-lg" role="navigation">
-    <a href="slide1.html" aria-label="Introduction Slide" class="flex flex-col items-center text-blue-600 font-bold hover:scale-110 transition transform" tabindex="0">
-        <i data-feather="home" class="w-7 h-7"></i>
-        <span class="text-xs mt-1">Intro</span>
-    </a>
-    <a href="slide2.html" aria-label="What is SQL Slide" class="flex flex-col items-center text-gray-600 hover:text-blue-600 hover:scale-110 transition transform" tabindex="0">
-        <i data-feather="database" class="w-6 h-6"></i>
-        <span class="text-xs mt-1">What is SQL?</span>
-    </a>
-    <a href="slide3.html" aria-label="Practical Example Slide" class="flex flex-col items-center text-gray-600 hover:text-blue-600 hover:scale-110 transition transform" tabindex="0">
-        <i data-feather="code" class="w-6 h-6"></i>
-        <span class="text-xs mt-1">Example</span>
-    </a>
-    <a href="slide4.html" aria-label="CRUD Operations Slide" class="flex flex-col items-center text-gray-600 hover:text-blue-600 hover:scale-110 transition transform" tabindex="0">
-        <i data-feather="settings" class="w-6 h-6"></i>
-        <span class="text-xs mt-1">CRUD</span>
-    </a>
-    <a href="slide5.html" aria-label="Summary Slide" class="flex flex-col items-center text-gray-600 hover:text-blue-600 hover:scale-110 transition transform" tabindex="0">
-        <i data-feather="check-circle" class="w-6 h-6"></i>
-        <span class="text-xs mt-1">Summary</span>
-    </a>
+    <nav class="fixed right-0 top-0 h-full w-24 bg-gradient-to-b from-white to-blue-50 shadow-lg flex flex-col justify-center items-center space-y-8 z-50 rounded-l-lg" role="navigation">
+        <a href="slide1.html" aria-label="Introduction Slide" class="flex flex-col items-center text-blue-600 font-bold hover:scale-110 transition transform" tabindex="0">
+            <i data-feather="home" class="w-7 h-7"></i>
+            <span class="text-xs mt-1">Intro</span>
+        </a>
+        <a href="slide2.html" aria-label="CRUD Operations Slide" class="flex flex-col items-center text-gray-600 hover:text-blue-600 hover:scale-110 transition transform" tabindex="0">
+            <i data-feather="settings" class="w-6 h-6"></i>
+            <span class="text-xs mt-1">CRUD</span>
+        </a>
+        <a href="slide3.html" aria-label="Data Analysis Slide" class="flex flex-col items-center text-gray-600 hover:text-blue-600 hover:scale-110 transition transform" tabindex="0">
+            <i data-feather="trending-up" class="w-6 h-6"></i>
+            <span class="text-xs mt-1">Analysis</span>
+        </a>
+        <a href="slide4.html" aria-label="Practical Example Slide" class="flex flex-col items-center text-gray-600 hover:text-blue-600 hover:scale-110 transition transform" tabindex="0">
+            <i data-feather="code" class="w-6 h-6"></i>
+            <span class="text-xs mt-1">Example</span>
+        </a>
+        <a href="slide5.html" aria-label="Visualization & Summary Slide" class="flex flex-col items-center text-gray-600 hover:text-blue-600 hover:scale-110 transition transform" tabindex="0">
+            <i data-feather="bar-chart-2" class="w-6 h-6"></i>
+            <span class="text-xs mt-1">Viz & Summary</span>
+        </a>
     </nav>
 
     <!-- Slide Content -->
@@ -57,7 +71,7 @@
             </div>
             <i data-feather="database" class="text-blue-600 w-16 h-16 mb-4"></i>
             <p class="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
-                Learn how SQL helps businesses analyze sales data and make informed decisions.
+                SQL (Structured Query Language) is a powerful tool for managing and analyzing data in relational databases. It enables businesses to extract insights from large datasets, such as sales figures and customer behavior, to make informed decisions.
             </p>
             <div class="flex justify-center space-x-4">
                 <a href="slide2.html" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300 flex items-center">
