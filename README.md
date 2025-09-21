@@ -1,46 +1,47 @@
 # SQL for Data Analysis Presentation
 
-This repository contains a web-based presentation on **SQL for Data Analysis** by **Dr. Chukwuka Obionwu**, hosted on GitHub Pages at [https://victordeman.github.io/sql-presentation/slide1.html](https://victordeman.github.io/sql-presentation/slide1.html). The presentation introduces SQL (Structured Query Language), its role in data analysis, practical examples, and CRUD operations, designed for learners and professionals interested in business analytics, data science, and inventory management.
+This repository contains a web-based presentation on **SQL for Data Analysis** by **Dr. Chukwuka Obionwu**, hosted on GitHub Pages at [https://victordeman.github.io/sql-presentation/slide1.html](https://victordeman.github.io/sql-presentation/slide1.html). The presentation introduces SQL (Structured Query Language), its core operations, data analysis techniques, practical examples, data visualization, and key takeaways, designed for learners and professionals in business analytics, data science, and inventory management.
 
 ## Overview
 
-The presentation is split into five slides, each in a separate HTML file, with a vertical navigation bar on the right side for easy access. The content is styled using [TailwindCSS](https://tailwindcss.com/) and [Feather Icons](https://feathericons.com/) for a modern, responsive design.
+The presentation is split into five slides, each in a separate HTML file, with a modern vertical navigation bar on the right side for easy access. The content is styled using [TailwindCSS](https://tailwindcss.com/) and [Feather Icons](https://feathericons.com/) for a responsive, visually appealing design.
+
+### Brief History of SQL
+SQL was developed in the 1970s by IBM researchers Raymond Boyce and Donald Chamberlin, based on Edgar F. Codd’s relational database model. Initially called SEQUEL (Structured English Query Language), it was designed for querying IBM’s System R database. Standardized in 1986 by ANSI, SQL evolved into a universal language for relational databases, widely adopted across industries for its simplicity and power in managing and analyzing data.
 
 ### Slides
-1. **Introduction (slide1.html)**: Introduces SQL and its importance in analyzing sales data, presented by Dr. Chukwuka Obionwu on September 24, 2025.
-2. **What is SQL? (slide2.html)**: Explains SQL as a Structured Query Language, its key commands (`SELECT`, `WHERE`, `GROUP BY`), and includes a sample Sales table.
-3. **Practical Example (slide3.html)**: Demonstrates SQL queries to analyze sales data, including:
+1. **Introduction (slide1.html)**: Introduces SQL as a tool for managing and analyzing data, presented by Dr. Chukwuka Obionwu on September 24, 2025.
+2. **CRUD Operations (slide2.html)**: Explains Create, Read, Update, and Delete operations with animated examples on a Sales table, visualizing data manipulation.
+3. **Data Analysis (slide3.html)**: Describes data analysis with SQL, its importance, and use cases like retail inventory optimization and customer segmentation.
+4. **Practical Example (slide4.html)**: Demonstrates SQL queries to analyze sales data, including:
    - Top 5 products by total sales.
    - Electronics-only product sales.
    - Clothing-only product sales.
    - Total sales by category.
-4. **Summary (slide4.html)**: Highlights key takeaways, such as SQL’s efficiency, wide applications, and tools like SQLValidator, with a call to action to explore business problems using SQL.
-5. **CRUD Operations (slide5.html)**: Shows Create, Read, Update, and Delete operations with animated examples on the Sales table, visualizing data manipulation.
+5. **Data Visualization & Summary (slide5.html)**: Explores how visualization enhances SQL analysis with examples (e.g., pie charts, line graphs) and summarizes key takeaways, including SQL’s efficiency and tools like SQLValidator.
 
 ## Accessing the Presentation
 
 Visit the presentation at the following URLs:
 - [Slide 1: Introduction](https://victordeman.github.io/sql-presentation/slide1.html)
-- [Slide 2: What is SQL?](https://victordeman.github.io/sql-presentation/slide2.html)
-- [Slide 3: Practical Example](https://victordeman.github.io/sql-presentation/slide3.html)
-- [Slide 4: CRUD Operations](https://victordeman.github.io/sql-presentation/slide4.html)
-- [Slide 5: Summary](https://victordeman.github.io/sql-presentation/slide5.html)
+- [Slide 2: CRUD Operations](https://victordeman.github.io/sql-presentation/slide2.html)
+- [Slide 3: Data Analysis](https://victordeman.github.io/sql-presentation/slide3.html)
+- [Slide 4: Practical Example](https://victordeman.github.io/sql-presentation/slide4.html)
+- [Slide 5: Data Visualization & Summary](https://victordeman.github.io/sql-presentation/slide5.html)
 
 Navigate between slides using the vertical navigation bar on the right side of each page.
 
 ## Repository Structure
-## Repository Structure
 ```
-
 sql-presentation/
 ├── slide1.html        # Introduction slide
-├── slide2.html        # What is SQL? slide
-├── slide3.html        # Practical Example slide with multiple queries
-├── slide4.html        # Summary slide
+├── slide2.html        # CRUD Operations slide with animations
+├── slide3.html        # Data Analysis slide with use cases
+├── slide4.html        # Practical Example slide with queries
+├── slide5.html        # Data Visualization & Summary slide
 ├── images/
 │   └── profile.jpg    # Profile image for Dr. Obionwu
 └── README.md          # This file
-
 ```
 
 ## Setup Instructions
