@@ -4,7 +4,7 @@ This repository contains a web-based presentation on **SQL for Data Analysis** b
 
 ## Overview
 
-The presentation is split into five slides, each in a separate HTML file, with a modern vertical navigation bar on the right side for easy access. The content is styled using [TailwindCSS](https://tailwindcss.com/) and [Feather Icons](https://feathericons.com/) for a responsive, visually appealing design.
+The presentation is split into six slides, each in a separate HTML file, with a modern vertical navigation bar on the right side for easy access. The content is styled using [TailwindCSS](https://tailwindcss.com/) and [Feather Icons](https://feathericons.com/) for a responsive, visually appealing design.
 
 ### Brief History of SQL
 SQL was developed in the 1970s by IBM researchers Raymond Boyce and Donald Chamberlin, based on Edgar F. Codd’s relational database model. Initially called SEQUEL (Structured English Query Language), it was designed for querying IBM’s System R database. Standardized in 1986 by ANSI, SQL evolved into a universal language for relational databases, widely adopted across industries for its simplicity and power in managing and analyzing data.
@@ -18,7 +18,8 @@ SQL was developed in the 1970s by IBM researchers Raymond Boyce and Donald Chamb
    - Electronics-only product sales.
    - Clothing-only product sales.
    - Total sales by category.
-5. **Data Visualization & Summary (slide5.html)**: Explores how visualization enhances SQL analysis with examples (e.g., pie charts, line graphs) and summarizes key takeaways, including SQL’s efficiency and tools like SQLValidator.
+5. **Data Visualization (slide5.html)**: Explores how visualization enhances SQL analysis with examples (e.g., pie charts, line graphs).
+6. **Summary (slide6.html)**: Summarizes key takeaways, including SQL’s efficiency, wide applications, and tools like SQLValidator, with a call to action.
 
 ## Accessing the Presentation
 
@@ -27,21 +28,23 @@ Visit the presentation at the following URLs:
 - [Slide 2: CRUD Operations](https://victordeman.github.io/sql-presentation/slide2.html)
 - [Slide 3: Data Analysis](https://victordeman.github.io/sql-presentation/slide3.html)
 - [Slide 4: Practical Example](https://victordeman.github.io/sql-presentation/slide4.html)
-- [Slide 5: Data Visualization & Summary](https://victordeman.github.io/sql-presentation/slide5.html)
+- [Slide 5: Data Visualization](https://victordeman.github.io/sql-presentation/slide5.html)
+- [Slide 6: Summary](https://victordeman.github.io/sql-presentation/slide6.html)
 
 Navigate between slides using the vertical navigation bar on the right side of each page.
 
 ## Repository Structure
 ```
 sql-presentation/
-├── slide1.html        # Introduction slide
-├── slide2.html        # CRUD Operations slide with animations
-├── slide3.html        # Data Analysis slide with use cases
-├── slide4.html        # Practical Example slide with queries
-├── slide5.html        # Data Visualization & Summary slide
+├── slide1.html        # Introduction
+├── slide2.html        # CRUD Operations
+├── slide3.html        # Data Analysis
+├── slide4.html        # Practical Example
+├── slide5.html        # Data Visualization
+├── slide6.html        # Summary
 ├── images/
-│   └── profile.jpg    # Profile image for Dr. Obionwu
-└── README.md          # This file
+│   └── profile.jpg
+└── README.md         # This file
 ```
 
 ## Setup Instructions
