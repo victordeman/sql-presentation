@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Summary - Slide 5</title>
+    <title>Data Visualization & Summary - Slide 5</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <style>
@@ -17,13 +17,13 @@
                 margin-right: 70px;
             }
             nav {
-                width: 16rem; /* w-16 */
+                width: 16rem;
             }
             nav a span {
-                font-size: 0.65rem; /* Smaller text */
+                font-size: 0.65rem;
             }
             nav a i {
-                width: 1.25rem; /* Smaller icons */
+                width: 1.25rem;
                 height: 1.25rem;
             }
             nav a.font-bold i {
@@ -40,21 +40,21 @@
             <i data-feather="home" class="w-6 h-6"></i>
             <span class="text-xs mt-1">Intro</span>
         </a>
-        <a href="slide2.html" aria-label="What is SQL Slide" class="flex flex-col items-center text-gray-600 hover:text-blue-600 hover:scale-110 transition transform" tabindex="0">
-            <i data-feather="database" class="w-6 h-6"></i>
-            <span class="text-xs mt-1">What is SQL?</span>
-        </a>
-        <a href="slide3.html" aria-label="Practical Example Slide" class="flex flex-col items-center text-gray-600 hover:text-blue-600 hover:scale-110 transition transform" tabindex="0">
-            <i data-feather="code" class="w-6 h-6"></i>
-            <span class="text-xs mt-1">Example</span>
-        </a>
-        <a href="slide4.html" aria-label="CRUD Operations Slide" class="flex flex-col items-center text-gray-600 hover:text-blue-600 hover:scale-110 transition transform" tabindex="0">
+        <a href="slide2.html" aria-label="CRUD Operations Slide" class="flex flex-col items-center text-gray-600 hover:text-blue-600 hover:scale-110 transition transform" tabindex="0">
             <i data-feather="settings" class="w-6 h-6"></i>
             <span class="text-xs mt-1">CRUD</span>
         </a>
-        <a href="slide5.html" aria-label="Summary Slide" class="flex flex-col items-center text-blue-600 font-bold hover:scale-110 transition transform" tabindex="0">
-            <i data-feather="check-circle" class="w-7 h-7"></i>
-            <span class="text-xs mt-1">Summary</span>
+        <a href="slide3.html" aria-label="Data Analysis Slide" class="flex flex-col items-center text-gray-600 hover:text-blue-600 hover:scale-110 transition transform" tabindex="0">
+            <i data-feather="trending-up" class="w-6 h-6"></i>
+            <span class="text-xs mt-1">Analysis</span>
+        </a>
+        <a href="slide4.html" aria-label="Practical Example Slide" class="flex flex-col items-center text-gray-600 hover:text-blue-600 hover:scale-110 transition transform" tabindex="0">
+            <i data-feather="code" class="w-6 h-6"></i>
+            <span class="text-xs mt-1">Example</span>
+        </a>
+        <a href="slide5.html" aria-label="Visualization & Summary Slide" class="flex flex-col items-center text-blue-600 font-bold hover:scale-110 transition transform" tabindex="0">
+            <i data-feather="bar-chart-2" class="w-7 h-7"></i>
+            <span class="text-xs mt-1">Viz & Summary</span>
         </a>
     </nav>
 
@@ -62,15 +62,45 @@
     <section class="flex items-center justify-center bg-gradient-to-br from-indigo-600 to-blue-600 px-6 py-20 min-h-screen">
         <div class="container mx-auto max-w-4xl text-center text-white">
             <div class="bg-white bg-opacity-10 backdrop-filter backdrop-blur-sm rounded-2xl p-8 md:p-12">
-                <h2 class="text-3xl md:text-4xl font-bold mb-6">Key Takeaways</h2>
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Data Visualization & Summary</h2>
+                <div class="mb-8">
+                    <h3 class="text-xl font-bold mb-4">Data Visualization in SQL Analysis</h3>
+                    <p class="text-lg text-blue-100 mb-4 max-w-2xl mx-auto">
+                        Data visualization transforms SQL query results into charts, graphs, and dashboards, making insights easier to understand and communicate. Tools like Tableau, Power BI, or SQL-integrated platforms (e.g., SQL Server Reporting Services) use query outputs to create visual representations.
+                    </p>
+                    <div class="bg-white bg-opacity-20 p-4 rounded-lg mb-6">
+                        <h4 class="font-bold text-lg mb-2">Why Visualization Matters</h4>
+                        <ul class="space-y-2 text-left max-w-xl mx-auto">
+                            <li class="flex items-start">
+                                <i data-feather="bar-chart-2" class="w-5 h-5 mr-2 mt-1"></i>
+                                <span><strong>Clarity</strong>: Visuals like bar charts or pie charts highlight trends (e.g., top-selling categories) instantly.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="bar-chart-2" class="w-5 h-5 mr-2 mt-1"></i>
+                                <span><strong>Decision-Making</strong>: Dashboards help stakeholders quickly act on insights, such as adjusting marketing budgets.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-white bg-opacity-20 p-4 rounded-lg">
+                            <h4 class="font-bold mb-2">Example: Sales by Category</h4>
+                            <p class="text-sm text-blue-100">A pie chart visualizes the proportion of total sales by category (e.g., 84% Electronics, 16% Clothing) from the query in Slide 4.</p>
+                        </div>
+                        <div class="bg-white bg-opacity-20 p-4 rounded-lg">
+                            <h4 class="font-bold mb-2">Example: Sales Trends</h4>
+                            <p class="text-sm text-blue-100">A line chart tracks sales over time, revealing seasonal patterns from a query like <code>SELECT Sale_Date, SUM(Sales_Amount) FROM Sales GROUP BY Sale_Date;</code></p>
+                        </div>
+                    </div>
+                </div>
+                <h3 class="text-xl font-bold mb-4">Key Takeaways</h3>
                 <div class="flex flex-col space-y-6 mb-8 text-left max-w-2xl mx-auto">
                     <div class="flex items-start">
                         <div class="bg-white bg-opacity-20 p-2 rounded-full mr-4">
                             <i data-feather="zap" class="w-6 h-6"></i>
                         </div>
                         <div>
-                            <h3 class="font-bold text-xl mb-2">SQL enables fast, efficient data analysis</h3>
-                            <p class="text-blue-100">Transform raw data into actionable insights with simple queries</p>
+                            <h4 class="font-bold text-lg mb-2">SQL enables fast, efficient data analysis</h4>
+                            <p class="text-blue-100">Transform raw data into actionable insights with simple queries.</p>
                         </div>
                     </div>
                     <div class="flex items-start">
@@ -78,8 +108,8 @@
                             <i data-feather="globe" class="w-6 h-6"></i>
                         </div>
                         <div>
-                            <h3 class="font-bold text-xl mb-2">Wide applications</h3>
-                            <p class="text-blue-100">Used in business analytics, data science, inventory management, and more</p>
+                            <h4 class="font-bold text-lg mb-2">Wide applications</h4>
+                            <p class="text-blue-100">Used in business analytics, data science, inventory management, and more.</p>
                         </div>
                     </div>
                     <div class="flex items-start">
@@ -87,8 +117,8 @@
                             <i data-feather="tool" class="w-6 h-6"></i>
                         </div>
                         <div>
-                            <h3 class="font-bold text-xl mb-2">Tools like SQLValidator</h3>
-                            <p class="text-blue-100">Built to help learners master SQL through practice</p>
+                            <h4 class="font-bold text-lg mb-2">Tools like SQLValidator</h4>
+                            <p class="text-blue-100">Built to help learners master SQL through practice.</p>
                         </div>
                     </div>
                 </div>
