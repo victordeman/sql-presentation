@@ -8,6 +8,7 @@
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         body {
             display: block !important;
@@ -33,11 +34,13 @@
                 height: 1.5rem;
             }
         }
-        .animate-fade-in { animation: fadeIn 1s ease-in-out; }
-        .animate-slide-up { animation: slideUp 0.8s ease-out; }
+        .animate-fade-in { animation: fadeIn 1s ease-in-out forwards; }
+        .animate-slide-up { animation: slideUp 0.8s ease-out forwards; }
         .animate-pulse-slow { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
         @keyframes slideUp { from { transform: translateY(30px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        .chart-container canvas { animation: fadeInUp 1.5s ease-out forwards; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans">
@@ -89,21 +92,19 @@
             
             <div class="grid md:grid-cols-2 gap-8 mb-8">
                 <!-- Pie Chart Description -->
-                <div class="bg-white p-6 rounded-lg shadow-md" data-aos="fade-right" data-aos-delay="100">
-                    <h3 class="text-xl font-semibold mb-4">Pie Charts: Categorical Distribution</h3>
-                    <p class="text-gray-700 mb-4">Visualize proportions of categories from SQL aggregates, like sales by product type. Animate slices to reveal data progressively for engaging insights.</p>
-                    <div class="w-full h-48 bg-gradient-to-r from-blue-100 to-green-100 rounded-lg flex items-center justify-center animate-slide-up">
-                        <p class="text-gray-600">Animated Pie Chart Placeholder</p>
-                    </div>
+                <div class="bg-white p-6 rounded-lg shadow-md chart-container" data-aos="fade-right" data-aos-delay="100">
+                    <h3 class="text-xl font-semibold mb-4 animate-slide-up">Pie Charts: Categorical Distribution</h3>
+                    <p class="text-gray-700 mb-4 animate-fade-in">Visualize proportions of categories from SQL aggregates, like sales by product type. Animate slices to reveal data progressively for engaging insights.</p>
+                    <canvas id="pieChart" width="300" height="300" class="mx-auto"></canvas>
+                    <p class="text-sm text-gray-500 mt-2">SQL: SELECT category, SUM(sales) FROM sales GROUP BY category;</p>
                 </div>
                 
                 <!-- Line Graph Description -->
-                <div class="bg-white p-6 rounded-lg shadow-md" data-aos="fade-left" data-aos-delay="200">
-                    <h3 class="text-xl font-semibold mb-4">Line Graphs: Trends Over Time</h3>
-                    <p class="text-gray-700 mb-4">Track temporal changes from time-series SQL queries, such as monthly sales trends. Animate lines drawing in to highlight growth patterns dynamically.</p>
-                    <div class="w-full h-48 bg-gradient-to-r from-green-100 to-purple-100 rounded-lg flex items-center justify-center animate-slide-up" data-aos-delay="300">
-                        <p class="text-gray-600">Animated Line Graph Placeholder</p>
-                    </div>
+                <div class="bg-white p-6 rounded-lg shadow-md chart-container" data-aos="fade-left" data-aos-delay="200">
+                    <h3 class="text-xl font-semibold mb-4 animate-slide-up">Line Graphs: Trends Over Time</h3>
+                    <p class="text-gray-700 mb-4 animate-fade-in">Track temporal changes from time-series SQL queries, such as monthly sales trends. Animate lines drawing in to highlight growth patterns dynamically.</p>
+                    <canvas id="lineChart" width="300" height="200" class="mx-auto"></canvas>
+                    <p class="text-sm text-gray-500 mt-2">SQL: SELECT month, SUM(sales) FROM sales GROUP BY month ORDER BY month;</p>
                 </div>
             </div>
             
@@ -125,10 +126,85 @@
     </section>
     
     <script>
-        AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
-        if (typeof feather !== 'undefined') {
-            feather.replace();
-        }
+        // Ensure AOS is loaded and initialized
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof AOS !== 'undefined') {
+                AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
+            } else {
+                console.error('AOS not loaded');
+            }
+            
+            // Replace Feather Icons
+            if (typeof feather !== 'undefined') {
+                feather.replace();
+            } else {
+                console.error('Feather Icons not loaded');
+            }
+            
+            // Animated Pie Chart
+            if (typeof Chart !== 'undefined') {
+                const ctxPie = document.getElementById('pieChart').getContext('2d');
+                new Chart(ctxPie, {
+                    type: 'pie',
+                    data: {
+                        labels: ['Electronics', 'Clothing', 'Books', 'Others'],
+                        datasets: [{
+                            data: [300, 150, 100, 50],
+                            backgroundColor: ['#3B82F6', '#10B981', '#F59E0B', '#EF4444'],
+                            borderWidth: 0
+                        }]
+                    },
+                    options: {
+                        animation: {
+                            animateRotate: true,
+                            animateScale: true,
+                            duration: 2000
+                        },
+                        responsive: true,
+                        plugins: {
+                            legend: {
+                                position: 'bottom'
+                            }
+                        }
+                    }
+                });
+            } else {
+                console.error('Chart.js not loaded');
+            }
+            
+            // Animated Line Graph
+            if (typeof Chart !== 'undefined') {
+                const ctxLine = document.getElementById('lineChart').getContext('2d');
+                new Chart(ctxLine, {
+                    type: 'line',
+                    data: {
+                        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                        datasets: [{
+                            label: 'Sales',
+                            data: [65, 59, 80, 81, 56, 55],
+                            borderColor: '#3B82F6',
+                            backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                            tension: 0.4,
+                            fill: true
+                        }]
+                    },
+                    options: {
+                        animation: {
+                            duration: 2000,
+                            easing: 'easeInOutQuart'
+                        },
+                        responsive: true,
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            } else {
+                console.error('Chart.js not loaded');
+            }
+        });
     </script>
 </body>
 </html>
