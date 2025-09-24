@@ -1,6 +1,6 @@
 # SQL for Data Analysis Presentation
 
-This repository contains a web-based presentation on **SQL for Data Analysis** by **Dr. Chukwuka Obionwu**, hosted on GitHub Pages at [https://victordeman.github.io/sql-presentation/slide1.html](https://victordeman.github.io/sql-presentation/slide1.html). The presentation introduces SQL (Structured Query Language), its core operations, data analysis techniques, practical examples, data visualization, and key takeaways, designed for learners and professionals in business analytics, data science, and inventory management.
+This repository contains a web-based presentation on **SQL for Data Analysis** by **Dr-Ing. Chukwuka Obionwu**, hosted on GitHub Pages at [https://victordeman.github.io/sql-presentation/slide1.html](https://victordeman.github.io/sql-presentation/slide1.html). The presentation introduces SQL (Structured Query Language), its core operations, data analysis techniques, practical examples, data visualization, and key takeaways, designed for learners and professionals in business analytics, data science, and inventory management.
 
 ## Overview
 
@@ -10,7 +10,7 @@ The presentation is split into six slides, each in a separate HTML file, with a 
 SQL was developed in the 1970s by IBM researchers Raymond Boyce and Donald Chamberlin, based on Edgar F. Codd’s relational database model. Initially called SEQUEL (Structured English Query Language), it was designed for querying IBM’s System R database. Standardized in 1986 by ANSI, SQL evolved into a universal language for relational databases, widely adopted across industries for its simplicity and power in managing and analyzing data.
 
 ### Slides
-1. **Introduction (slide1.html)**: Introduces SQL as a tool for managing and analyzing data, presented by Dr. Chukwuka Obionwu on September 24, 2025.
+1. **Introduction (slide1.html)**: Introduces SQL as a tool for managing and analyzing data, presented by Dr-Ing. Chukwuka Obionwu on September 24, 2025.
 2. **CRUD Operations (slide2.html)**: Explains Create, Read, Update, and Delete operations with animated examples on a Sales table, visualizing data manipulation.
 3. **Data Analysis (slide3.html)**: Describes data analysis with SQL, its importance, and use cases like retail inventory optimization and customer segmentation.
 4. **Practical Example (slide4.html)**: Demonstrates SQL queries to analyze sales data, including:
