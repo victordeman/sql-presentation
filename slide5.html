@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Visualization in SQL Analysis - Slide 5</title>
+    <title>Data Visualization with SQL - Slide 5</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <style>
         body {
             display: block !important;
@@ -31,13 +33,18 @@
                 height: 1.5rem;
             }
         }
+        .animate-fade-in { animation: fadeIn 1s ease-in-out; }
+        .animate-slide-up { animation: slideUp 0.8s ease-out; }
+        .animate-pulse-slow { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideUp { from { transform: translateY(30px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans">
     <!-- Right-Side Navigation -->
     <nav class="fixed right-0 top-0 h-full w-24 bg-gradient-to-b from-white to-blue-50 shadow-lg flex flex-col justify-center items-center space-y-8 z-50 rounded-l-lg" role="navigation">
         <a href="slide1.html" aria-label="Introduction Slide" class="flex flex-col items-center text-gray-600 hover:text-blue-600 hover:scale-110 transition transform" tabindex="0">
-            <i data-feather="home" class="w-6 h-6"></i>
+            <i data-feather="home" class="w-7 h-7"></i>
             <span class="text-xs mt-1">Intro</span>
         </a>
         <a href="slide2.html" aria-label="CRUD Operations Slide" class="flex flex-col items-center text-gray-600 hover:text-blue-600 hover:scale-110 transition transform" tabindex="0">
@@ -53,65 +60,72 @@
             <span class="text-xs mt-1">Example</span>
         </a>
         <a href="slide5.html" aria-label="Data Visualization Slide" class="flex flex-col items-center text-blue-600 font-bold hover:scale-110 transition transform" tabindex="0">
-            <i data-feather="bar-chart-2" class="w-7 h-7"></i>
+            <i data-feather="bar-chart-2" class="w-6 h-6"></i>
             <span class="text-xs mt-1">Visualization</span>
         </a>
         <a href="slide6.html" aria-label="Summary Slide" class="flex flex-col items-center text-gray-600 hover:text-blue-600 hover:scale-110 transition transform" tabindex="0">
             <i data-feather="check-circle" class="w-6 h-6"></i>
             <span class="text-xs mt-1">Summary</span>
         </a>
+        <a href="about.html" aria-label="About Dr. Obionwu" class="flex flex-col items-center text-gray-600 hover:text-blue-600 hover:scale-110 transition transform" tabindex="0">
+            <i data-feather="user" class="w-6 h-6"></i>
+            <span class="text-xs mt-1">About</span>
+        </a>
     </nav>
-
+    
     <!-- Slide Content -->
-    <section class="flex items-center justify-center bg-gray-50 px-6 py-20 min-h-screen">
-        <div class="container mx-auto max-w-4xl text-center">
-            <h2 class="text-3xl font-bold mb-6 text-gray-800">Data Visualization in SQL Analysis</h2>
-            <p class="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
-                Data visualization transforms SQL query results into charts, graphs, and dashboards, making insights easier to understand and communicate. Tools like Tableau, Power BI, or SQL-integrated platforms (e.g., SQL Server Reporting Services) use query outputs to create visual representations.
+    <section class="flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-50 px-6 py-20 min-h-screen">
+        <div class="container mx-auto max-w-4xl text-center" data-aos="fade-up">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6 text-gray-800 animate-slide-up">Data Visualization: Enhancing SQL Insights</h1>
+            <div class="flex items-center justify-center space-x-4 mb-8 animate-fade-in">
+                <img src="images/profile.jpg" alt="Dr. Chukwuka Obionwu Profile" class="w-16 h-16 rounded-full object-cover shadow-md">
+                <div class="text-left">
+                    <p class="font-medium">Dr. Chukwuka Obionwu</p>
+                    <p class="text-gray-600">September 24, 2025</p>
+                </div>
+            </div>
+            
+            <i data-feather="pie-chart" class="text-blue-600 w-16 h-16 mb-6 animate-pulse-slow"></i>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <!-- Pie Chart Description -->
+                <div class="bg-white p-6 rounded-lg shadow-md" data-aos="fade-right" data-aos-delay="100">
+                    <h3 class="text-xl font-semibold mb-4">Pie Charts: Categorical Distribution</h3>
+                    <p class="text-gray-700 mb-4">Visualize proportions of categories from SQL aggregates, like sales by product type. Animate slices to reveal data progressively for engaging insights.</p>
+                    <div class="w-full h-48 bg-gradient-to-r from-blue-100 to-green-100 rounded-lg flex items-center justify-center animate-slide-up">
+                        <p class="text-gray-600">Animated Pie Chart Placeholder</p>
+                    </div>
+                </div>
+                
+                <!-- Line Graph Description -->
+                <div class="bg-white p-6 rounded-lg shadow-md" data-aos="fade-left" data-aos-delay="200">
+                    <h3 class="text-xl font-semibold mb-4">Line Graphs: Trends Over Time</h3>
+                    <p class="text-gray-700 mb-4">Track temporal changes from time-series SQL queries, such as monthly sales trends. Animate lines drawing in to highlight growth patterns dynamically.</p>
+                    <div class="w-full h-48 bg-gradient-to-r from-green-100 to-purple-100 rounded-lg flex items-center justify-center animate-slide-up" data-aos-delay="300">
+                        <p class="text-gray-600">Animated Line Graph Placeholder</p>
+                    </div>
+                </div>
+            </div>
+            
+            <p class="text-xl text-gray-700 mb-8 max-w-3xl mx-auto text-justify animate-fade-in" data-aos="fade-up" data-aos-delay="400">
+                Visualization transforms raw SQL query results into compelling stories. Tools like Chart.js or D3.js integrate seamlessly with SQL outputs, adding animations to make data more memorable and interactive for stakeholders.
             </p>
-            <div class="bg-blue-50 p-6 rounded-lg mb-8">
-                <h3 class="font-bold text-lg mb-4">Why Visualization Matters</h3>
-                <ul class="space-y-3 text-left max-w-xl mx-auto">
-                    <li class="flex items-start">
-                        <i data-feather="bar-chart-2" class="text-blue-600 mr-2 mt-1 w-5 h-5"></i>
-                        <span><strong>Clarity</strong>: Visuals like bar charts or pie charts highlight trends (e.g., top-selling categories) instantly.</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i data-feather="bar-chart-2" class="text-blue-600 mr-2 mt-1 w-5 h-5"></i>
-                        <span><strong>Decision-Making</strong>: Dashboards help stakeholders quickly act on insights, such as adjusting marketing budgets.</span>
-                    </li>
-                </ul>
-            </div>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-white p-6 rounded-xl shadow-sm">
-                    <h3 class="font-bold text-lg mb-4">Example: Sales by Category</h3>
-                    <p class="text-gray-700 mb-4">
-                        A pie chart visualizes the proportion of total sales by category (e.g., 84% Electronics, 16% Clothing) from the query in Slide 4.
-                    </p>
-                    <div class="bg-gray-100 p-4 rounded-lg">
-                        <p class="text-sm text-gray-600">Query: <code>SELECT Category, SUM(Sales_Amount) FROM Sales GROUP BY Category;</code></p>
-                    </div>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-sm">
-                    <h3 class="font-bold text-lg mb-4">Example: Sales Trends</h3>
-                    <p class="text-gray-700 mb-4">
-                        A line chart tracks sales over time, revealing seasonal patterns from a query like <code>SELECT Sale_Date, SUM(Sales_Amount) FROM Sales GROUP BY Sale_Date;</code>
-                    </p>
-                    <div class="bg-gray-100 p-4 rounded-lg">
-                        <p class="text-sm text-gray-600">Visualizes trends for strategic planning.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="mt-8">
-                <a href="slide6.html" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300 flex items-center justify-center mx-auto">
+            
+            <div class="flex justify-center space-x-4 animate-slide-up" data-aos="fade-up" data-aos-delay="500">
+                <a href="slide6.html" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300 flex items-center">
                     <span>Next: Summary</span>
                     <i data-feather="arrow-right" class="ml-2 w-5 h-5"></i>
+                </a>
+                <a href="slide4.html" class="px-6 py-3 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition duration-300 flex items-center">
+                    <span>Previous</span>
+                    <i data-feather="arrow-left" class="mr-2 w-5 h-5"></i>
                 </a>
             </div>
         </div>
     </section>
-
+    
     <script>
+        AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
         if (typeof feather !== 'undefined') {
             feather.replace();
         }
